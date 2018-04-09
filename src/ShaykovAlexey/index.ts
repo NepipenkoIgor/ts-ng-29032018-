@@ -1,30 +1,22 @@
-function isInArray(firstParam: any[], ...restOfParams: any[]): boolean {
+function isInArray(firstParam: snb[], ...restOfParams: snb[]): boolean {
   return restOfParams.every((value) => {
     return (firstParam.indexOf(value) >= 0);
   });
 }
-let isVue: boolean = isInArray(["Vue"], "Vue", "Vue", "Vue");
 
-function summator(...args: (string|number)[]): number {
-  const numbers = args.map((x) => {
-    if (isString(x)) {
-      const num = parseInt(x, 10);
-      return isNaN(num) ? 0 : num;
-    }
-    return x;
-  });
-  return numbers.reduce((a, b) => a + b, 0);
+function summator(...args: sn[]): number {
+  return args.map(Number).reduce((a, b) => a + (isNaN(b) ? 0 : b), 0);
 }
 
-function isString(myVar: number | string): myVar is string {
-  return typeof myVar === "string";
-}
 
-summator(1, "15", "aa123");
-
-function getUnique(...args: any[]): any[] {
+function getUnique(...args: snb[]): snb[] {
   return [...new Set(args)];
 }
+
+function getUnique2(...args: snb[]): snb[] {
+  return Array.from(new Set(args));
+}
+
 
 function smartRevers(str: string): string {
   let result = "";
@@ -44,3 +36,5 @@ function smartRevers(str: string): string {
   });
   return result.trim();
 }
+
+export {isInArray, summator, smartRevers, getUnique, getUnique2};
