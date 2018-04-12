@@ -1,0 +1,1 @@
+type ns = string | number;

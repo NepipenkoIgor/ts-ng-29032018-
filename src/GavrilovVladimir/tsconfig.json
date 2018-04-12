@@ -1,13 +1,17 @@
 {
   "extends": "../../tsconfig.json",
   "include": [
-    "**/*.ts"
+    "*.ts",
+    "tests/*.ts"
   ],
   "compileOnSave": true,
   "compilerOptions": {
     "noEmitOnError": false,
-    "preserveWatchOutput": true,
+    "noImplicitAny": true,
     "watch": true,
-    "noImplicitAny": true
+    "lib": [ "es2016" ],
+    "typeRoots": [
+      "../../node_modules/@types",
+      "types" ]
   }
 }
