@@ -1,0 +1,23 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": [
+    "../**/*.ts"
+  ],
+  // "exclude": [
+  //   "../**/*.test.ts"
+  // ],
+  "typeRoots": [
+    "../../../node_modules/@types",
+    "../types"    
+  ],
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noEmitOnError": false,
+    "noImplicitAny": true,
+    "preserveWatchOutput": true,
+    "watch": true,
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "../build"
+  }
+}
