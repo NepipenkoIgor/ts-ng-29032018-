@@ -8,7 +8,8 @@ module.exports = {
     ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
   },
   "testMatch": [
-    "<rootDir>/src/**/*.spec.ts"
+    "<rootDir>/src/**/*.spec.ts",
+    "<rootDir>/src/**/tests/*.spec.ts"
   ],
   "collectCoverage": true,
   "coverageReporters": ["text-summary"],
