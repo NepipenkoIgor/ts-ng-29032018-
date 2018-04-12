@@ -121,19 +121,79 @@
 //   firstName!: string;
 //   age!: number;
 // }
+//
+//function isString(myVar: number | string): myVar is string {
+//  return typeof myVar === "string";
+//}
+//
+//function average(a: number | string): number {
+//  let total = 0;
+//  if (isString(a)) {
+//    total += parseInt(a, 10);
+//  } else {
+//    total += a;
+//  }
+//  return 1;
+// }
 
-function isString(myVar: number | string): myVar is string {
-  return typeof myVar === "string";
-}
+// average(1);
 
-function average(a: number | string): number {
-  let total = 0;
-  if (isString(a)) {
-    total += parseInt(a, 10);
-  } else {
-    total += a;
-  }
-  return 1;
-}
+// class SuperPoint {
+//
+//   public constructor(protected x: number, private y: number) {
+//
+//   }
+//
+//   public sum(): number {
+//     return this.x + this.y;
+//   }
+//
+//   public set superY(value: number) {
+//     this.y = value;
+//   }
+// }
+//
+// class Point extends SuperPoint {
+//   public constructor(x: number, y: number) {
+//     super(x, y);
+//     this
+//   }
+// }
+//
+// let point = new Point(1, 3);
+// point.superY = 4;
 
-average(1);
+// class Singleton {
+//   public static getInstance(): Singleton {
+//     if (!Singleton.instance) {
+//       Singleton.instance = new Singleton();
+//     }
+//     return Singleton.instance;
+//   }
+//
+//   private static instance: Singleton;
+//
+//   private static readonly className: string = "Singleton";
+//
+//   private constructor() {}
+// }
+//
+// let a = Singleton.getInstance();
+// let b = Singleton.getInstance();
+
+// abstract class SuperPoint {
+//   public abstract sum(): number;
+// //
+// //   public getPointName(): string {
+// //     return "Some Name";
+// //   }
+// // }
+// //
+// // class Point extends SuperPoint implements OnInit, OnDestroy {
+//   public sum(): number {
+//     return 3;
+//   }
+// }
+//
+// let p =  new Point();
+// p.
