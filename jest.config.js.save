@@ -1,6 +1,3 @@
-// npm i jest @types/jest ts-jest -D
-console.log('local jest config');
-
 module.exports = {
   "globals": {
     "ts-jest": {
@@ -11,7 +8,7 @@ module.exports = {
     ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
   },
   "testMatch": [
-    "<rootDir>/src/RoganovDmitry/*.spec.ts"
+    "<rootDir>/src/**/*.spec.ts"
   ],
   "collectCoverage": true,
   "coverageReporters": ["text-summary"],

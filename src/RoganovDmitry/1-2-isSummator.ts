@@ -6,6 +6,7 @@ function summator (...sumElems: (string | number)[]) : number {
 	
 	let sum: number = 0;
 	
+	
 	for (let elem of sumElems ) {
 		
 
