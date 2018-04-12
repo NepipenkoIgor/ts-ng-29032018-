@@ -1,14 +1,15 @@
-function isInArray(first: number[], ...second: number[]): boolean {
+export function isInArray(first: snb[], ...second: snb[]): boolean {
   let result: boolean = true;
   for (const elSecond of second) {
-    if ( !first.some(x => x === elSecond) ) {
+    if ( !first.some((x) => x === elSecond) ) {
       result = false;
+      break;
     }
   }
   return result;
 }
 
-function summator(...arr: Array<number | string>): number {
+export function summator(...arr: Array<number | string>): number {
   let total: number = 0;
   for (const element of arr) {
     if (!isNaN(Number(element))) {
@@ -18,23 +19,30 @@ function summator(...arr: Array<number | string>): number {
   return total;
 }
 
-function getUnique(...arr: number[]): number[] {
-  let newArray: number[] = [];
+export function getUnique(...arr: snb[]): snb[] {
+  const newArray: snb[] = [];
   for (const element of arr) {
-    if ( newArray.every(x => x !== element) ) {
+    if ( newArray.every((x) => x !== element) ) {
       newArray.push(element);
     }
   }
   return newArray;
 }
 
-function reverse(initial: string): string {
-  let newString: string = "";
-  const arrayFromInitString: string[] = initial.split(" ");
-  for (const element of arrayFromInitString) {
-    newString += element.split("").reverse().join("");
+export function reverse(initial: string): string {
+  let newString = "";
+  initial.split(" ").forEach((word) => {
+    const letterArray = word.split("");
+    const tempArray = new Array(letterArray.length + 1);
+    letterArray.forEach((chart, index) => {
+      if (/^[a-zA-Z]$/.test(chart)) {
+        tempArray[(letterArray.length - 1) - index] = chart;
+      } else {
+        tempArray[index] = chart;
+      }
+    });
+    newString += tempArray.join("");
     newString += " ";
-  }
-  newString = newString.substring(0, newString.length - 1);
-  return newString;
+  });
+  return newString.trim();
 }
